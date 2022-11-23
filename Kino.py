@@ -30,18 +30,24 @@ if a == 1:
         driver.quit()
 
 else : #print("No")
-    s = ["Самара", "Сочи", "Мурманск", "Анапа"]
-    s2 = ["1", "2", "3", "4"]
-
+    s = []
+    s2 = []
+    with open('output.txt') as file:
+        for line in file:
+            s.append(line) 
+            #print(line.rstrip())
+            
+'''
     MyFile = open ('output.txt', 'w')
-    MyFile2 = open ('output2.txt', 'w')
+    #MyFile2 = open ('output2.txt', 'w')
     s = map (lambda x: x + '\n', s)
-    s2 = map (lambda x: x + '\n', s2)  
+    #s2 = map (lambda x: x + '\n', s2)  
     MyFile.writelines(s)
-    MyFile2.writelines(s2) 
+    #MyFile2.writelines(s2) 
     MyFile.close ()
-    MyFile.close ()
-    print (*s)
+    #MyFile2.close ()
+'''    
+print (*s)
 
 #/html/body/div[1]/div/div[3]/div/div[1]/div[2]/div[1]/div/span 1
 #/html/body/div[1]/div/div[3]/div/div[1]/div[2]/div[2]/div/span 2
