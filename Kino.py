@@ -3,8 +3,8 @@ import time
 from selenium.webdriver.common.by import By
 import undetected_chromedriver.v2 as uc
 
-a = input()
-if a == 1:
+a = input() #выбрать мини-игру
+if a == 1: #2 мини-игра
     class one : 
         driver = uc.Chrome(executable_path="chromedriver.exe")
         driver.get("https://www.kinopoisk.ru/special/birthday19/")    
@@ -17,27 +17,29 @@ if a == 1:
         time.sleep(10)
         element = driver.find_element(By.XPATH,'/html/body/div[1]/div/div[3]/div/div[2]/div[2]/div[1]/div/div/button').click() #начать
         time.sleep(10)
+    
 
-        for i in range (10,0,-1):
-            1
-        time.sleep(100)
+        #element = driver.find_element(By.CLASS_NAME, 'game__test-question').text
+        #print(element)
+        for i in range (20,0,-1):
+            if i == 10:
+                time.sleep(100)
 
         time.sleep(15)
 
 
-
-
         driver.quit()
 
-else : #print("No")
+        #game__test-life-item - life
+        #game__test-life-item game__test-life-item_dead - dead
+elif  a == 2:
     s = []
-    s2 = []
-    with open('output.txt') as file:
+    #s2 = []
+    with open('output.txt') as file: #получаем список исходя из файла с текстом(потом туда будут добавлятся элементы вследствие чего и список будет увеличиваться)
         for line in file:
             s.append(line) 
-            #print(line.rstrip())
-            
-'''
+         
+
     MyFile = open ('output.txt', 'w')
     #MyFile2 = open ('output2.txt', 'w')
     s = map (lambda x: x + '\n', s)
@@ -46,12 +48,14 @@ else : #print("No")
     #MyFile2.writelines(s2) 
     MyFile.close ()
     #MyFile2.close ()
-'''    
+   
 print (*s)
+
 
 #/html/body/div[1]/div/div[3]/div/div[1]/div[2]/div[1]/div/span 1
 #/html/body/div[1]/div/div[3]/div/div[1]/div[2]/div[2]/div/span 2
 #/html/body/div[1]/div/div[3]/div/div[1]/div[2]/div[3]/div/span 3
 #/html/body/div[1]/div/div[3]/div/div[1]/div[2]/div[4]/div/span 4
 
-#list.append(x)	Добавляет элемент в конец списка
+
+#list.append(x)	Добавляет элемент в конец списка 
